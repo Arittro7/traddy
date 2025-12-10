@@ -1,36 +1,41 @@
-import React from "react";
 import { MapPin } from "lucide-react";
+
 export function FeaturedCities() {
   const cities = [
     {
       name: "Paris",
       country: "France",
-      guides: 124,
+      guides: 70,
       image:
         "https://images.unsplash.com/photo-1502602898657-3e91760cbb34?w=800&q=80",
+      description: "Explore the Eiffel Tower and charming hidden cafés.",
     },
     {
       name: "Tokyo",
       country: "Japan",
-      guides: 98,
+      guides: 47,
       image:
         "https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?w=800&q=80",
+      description: "Experience Shibuya Crossing and authentic street food.",
     },
     {
-      name: "Barcelona",
-      country: "Spain",
-      guides: 156,
+      name: "Istanbul",
+      country: "Turkey",
+      guides: 153,
       image:
-        "https://images.unsplash.com/photo-1583422409516-2895a77efded?w=800&q=80",
+        "https://media.cntraveller.com/photos/68ff3db8e7084c26e7744dee/1:1/w_2160,h_2160,c_limit/1480863367",
+      description: "Marvel at Hagia Sophia and the Grand Bazaar.",
     },
     {
       name: "New York",
       country: "USA",
-      guides: 203,
+      guides: 210,
       image:
         "https://images.unsplash.com/photo-1496442226666-8d4d0e62e6e9?w=800&q=80",
+      description: "Visit Times Square and Central Park.",
     },
   ];
+
   return (
     <section className="py-20 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -64,6 +69,11 @@ export function FeaturedCities() {
                     <MapPin className="w-4 h-4 mr-1" />
                     <span>{city.guides} local guides</span>
                   </div>
+                </div>
+
+                {/* Tooltip */}
+                <div className="absolute text-xl top-4 left-4 bg-white/80 text-black  rounded-lg px-3 py-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  {city.description}
                 </div>
               </div>
             </div>
