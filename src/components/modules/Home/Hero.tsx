@@ -4,7 +4,7 @@ import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 export function Hero() {
   return (
-    <section className="relative bg-gradient-to-br from-green-800 via-red-900 to-green-800 text-white">
+    <section className="relative bg-gradient-to-br from-green-600 via-green-700 to-emerald-800 text-white">
       <div className="absolute inset-0 bg-black opacity-20"></div>
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 md:py-32">
