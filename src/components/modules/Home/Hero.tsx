@@ -1,31 +1,34 @@
-import React from "react";
+
 import { Search, MapPin } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 export function Hero() {
   return (
-    <section className="relative bg-gradient-to-br from-blue-600 via-blue-700 to-blue-900 text-white">
+    <section className="relative bg-gradient-to-br from-green-800 via-red-900 to-green-800 text-white">
       <div className="absolute inset-0 bg-black opacity-20"></div>
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 md:py-32">
         <div className="text-center max-w-4xl mx-auto">
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
-            Explore Cities Like a Local
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-2 leading-tight">
+            Welcome to Traddy
           </h1>
-          <p className="text-xl md:text-2xl mb-12 text-blue-100">
+          <p className="text-xl md:text-2xl font-semibold text-green-400">
+            YOUR TRUSTED TRAVEL BUDDY TO EXPLORE CITIES LIKE LOCAL
+          </p>
+          <p className="text-xl md:text-2xl mb-12">
             Connect with passionate local guides for authentic, personalized
             experiences that go beyond the tourist trail
           </p>
 
           {/* Search Bar */}
-          <div className="bg-white rounded-2xl shadow-2xl p-4 md:p-6 max-w-3xl mx-auto mb-8">
+          <div className="bg-yellow-400 rounded-2xl shadow-2xl p-4 md:p-6 max-w-3xl mx-auto mb-8">
             <div className="flex flex-col md:flex-row gap-4">
               <div className="flex-1 relative">
-                <MapPin className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
+                <MapPin className="absolute left-4 top-1/2 transform -translate-y-1/2 text-black w-5 h-5" />
                 <Input
                   type="text"
                   placeholder="Where are you going?"
-                  className="pl-12 text-gray-900"
+                  className="pl-12 text-black"
                 />
               </div>
               <Button variant="primary" size="lg" className="md:w-auto w-full">
