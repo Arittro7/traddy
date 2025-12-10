@@ -1,6 +1,6 @@
 "use client";
-import React, { useState } from "react";
-import { MapPin, Menu, X } from "lucide-react";
+import { useState } from "react";
+import { Menu, X } from "lucide-react";
 import { Button } from "../ui/button";
 import Link from "next/link";
 import { useAuth } from "@/actions/useAuth";
@@ -21,9 +21,8 @@ export function Navbar() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
             <Link href={"/"} className="flex items-center space-x-2">
-              <MapPin className="w-8 h-8 text-blue-600" />
               <span className="text-2xl font-bold text-gray-900">
-                LocalGuide
+                Traddy
               </span>
             </Link>
             <div className="text-gray-500">Loading...</div>
@@ -35,12 +34,12 @@ export function Navbar() {
 
   return (
     <nav className="bg-white shadow-sm sticky top-0 z-50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className=" mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <Link href={"/"} className="flex items-center space-x-2">
-            <MapPin className="w-8 h-8 text-blue-600" />
-            <span className="text-2xl font-bold text-gray-900">LocalGuide</span>
+            
+            <span className="text-2xl font-bold text-gray-900">Traddy</span>
           </Link>
 
           {/* Desktop Navigation */}
@@ -66,12 +65,6 @@ export function Navbar() {
                     >
                       Dashboard
                     </Link>
-                    {/* <Link
-                      href="/dashboard/guide/listings"
-                      className="text-gray-700 hover:text-blue-600 font-medium transition-colors"
-                    >
-                      My Listings
-                    </Link> */}
                   </>
                 )}
 
@@ -108,16 +101,6 @@ export function Navbar() {
                     </Link>
                   </>
                 )}
-
-                {/* Show Become a Guide for tourists only */}
-                {/* {user.role === "TOURIST" && (
-                  <Link
-                    href="/become-a-guide"
-                    className="text-gray-700 hover:text-blue-600 font-medium transition-colors"
-                  >
-                    Become a Guide
-                  </Link>
-                )} */}
 
                 {/* Common for all logged in users */}
                 <Link
@@ -201,13 +184,6 @@ export function Navbar() {
                     >
                       Dashboard
                     </Link>
-                    {/* <Link
-                      href="/dashboard/guide/listings"
-                      className="block text-gray-700 hover:text-blue-600 font-medium py-2"
-                      onClick={() => setIsMenuOpen(false)}
-                    >
-                      My Listings
-                    </Link> */}
                   </>
                 )}
 
@@ -246,17 +222,6 @@ export function Navbar() {
                     </Link>
                   </>
                 )}
-
-                {/* Show Become a Guide for tourists only */}
-                {/* {user.role === "TOURIST" && (
-                  <Link
-                    href="/become-a-guide"
-                    className="block text-gray-700 hover:text-blue-600 font-medium py-2"
-                    onClick={() => setIsMenuOpen(false)}
-                  >
-                    Become a Guide
-                  </Link>
-                )} */}
 
                 {/* Common for all logged in users */}
                 <Link
