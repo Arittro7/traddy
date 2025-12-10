@@ -1,4 +1,3 @@
-import React from "react";
 import { Search, MessageCircle, MapPin } from "lucide-react";
 export function HowItWorks() {
   const steps = [
