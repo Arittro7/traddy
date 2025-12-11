@@ -1,4 +1,4 @@
-# 🗺️ Local Guide Platform
+# 🗺️ Traddy - Trusted Travel Buddy
 
 A full-stack platform connecting travelers with passionate local experts who offer authentic, personalized experiences. Travelers can discover unique tours, book guides securely, and explore destinations like a true local — while guides can monetize their knowledge and host meaningful experiences.
 
@@ -8,8 +8,13 @@ A full-stack platform connecting travelers with passionate local experts who off
 
 | Service                    | URL                                                                                            |
 | -------------------------- | ---------------------------------------------------------------------------------------------- |
+<<<<<<< HEAD
 | **Frontend (Live)**        | [url here](url here)   |
 | **Backend (API Base URL)** | [url here](url here) |
+=======
+| **Frontend (Live)**        | [url will paste here](url will pasre here/)   |
+| **Backend (API Base URL)** | [url will paste here](url will paste here) |
+>>>>>>> a38054f8990a49c850df7c270b1153efc3530b63
 
 ---
 
@@ -119,7 +124,7 @@ The platform democratizes travel guiding, making tourism more authentic and comm
 ### 1️⃣ Clone the repository
 
 ```bash
-git clone https://github.com/Sadia492/local-guide-frontend.git
+git clone https://github.com/arittro7/traddy.git
 cd local-guide-platform
 ```
 
