@@ -149,7 +149,7 @@ export default function Sidebar() {
         <div className="w-8 h-8 bg-blue-600 rounded-full flex items-center justify-center">
           <Compass className="w-5 h-5 text-white" />
         </div>
-        <span className="text-xl font-bold text-gray-900">LocalGuide</span>
+        <span className="text-xl font-bold text-gray-900">Traddy</span>
       </Link>
 
       {/* User info */}

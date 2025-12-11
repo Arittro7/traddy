@@ -27,7 +27,7 @@ export default function LoginHero() {
       <div className="mb-8">
         <Link href="/" className="flex items-center space-x-2 mb-6">
           <MapPin className="w-12 h-12 text-blue-600" />
-          <span className="text-4xl font-bold text-gray-900">LocalGuide</span>
+          <span className="text-4xl font-bold text-gray-900">Traddy</span>
         </Link>
         <h1 className="text-3xl font-bold text-gray-900 mb-4">Welcome Back</h1>
         <p className="text-gray-600 text-lg">

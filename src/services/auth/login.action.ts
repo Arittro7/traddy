@@ -47,6 +47,7 @@ export async function login(
         name: name.trim(),
         value: value.trim(),
         httpOnly: true,
+        // secure: process.env.NODE_ENV === "development",
         secure: process.env.NODE_ENV === "production",
         sameSite: "lax",
         path: "/",

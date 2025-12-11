@@ -1,8 +1,8 @@
 import ProfilePageWrapper from "@/components/modules/Profile/ProfilePageWrapper";
 
 export const metadata = {
-  title: "User Profile | LocalGuide",
-  description: "View user profile, reviews, and tours on LocalGuide.",
+  title: "User Profile | Traddy",
+  description: "View user profile, reviews, and tours on Traddy.",
 };
 
 interface ProfilePageProps {

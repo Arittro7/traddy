@@ -8,8 +8,8 @@ A full-stack platform connecting travelers with passionate local experts who off
 
 | Service                    | URL                                                                                            |
 | -------------------------- | ---------------------------------------------------------------------------------------------- |
-| **Frontend (Live)**        | [https://local-guide-frontend-rho.vercel.app/](https://local-guide-frontend-rho.vercel.app/)   |
-| **Backend (API Base URL)** | [https://local-guide-backend-0p6e.onrender.com](https://local-guide-backend-0p6e.onrender.com) |
+| **Frontend (Live)**        | [url here](url here)   |
+| **Backend (API Base URL)** | [url here](url here) |
 
 ---
 

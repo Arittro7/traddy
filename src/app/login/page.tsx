@@ -5,9 +5,9 @@ import { MapPin } from "lucide-react";
 import LoginForm from "@/components/modules/Auth/LoginForm";
 
 export const metadata = {
-  title: "Login | LocalGuide",
+  title: "Login | Traddy",
   description:
-    "Sign in to your LocalGuide account to book tours or manage your guide listings.",
+    "Sign in to your Traddy account to book tours or manage your guide listings.",
 };
 
 interface LoginPageProps {
@@ -48,7 +48,7 @@ export default async function LoginPage({ searchParams }: LoginPageProps) {
             className="flex items-center justify-center space-x-2 mb-4"
           >
             <MapPin className="w-10 h-10 text-blue-600" />
-            <span className="text-3xl font-bold text-gray-900">LocalGuide</span>
+            <span className="text-3xl font-bold text-gray-900">Traddy</span>
           </Link>
           <h1 className="text-2xl font-bold text-gray-900 mb-2">
             Welcome Back

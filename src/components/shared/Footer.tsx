@@ -9,7 +9,7 @@ export function Footer() {
           <div>
             <div className="flex items-center space-x-2 mb-4">
               <MapPin className="w-8 h-8 text-blue-500" />
-              <span className="text-2xl font-bold text-white">LocalGuide</span>
+              <span className="text-2xl font-bold text-white">Traddy</span>
             </div>
             <p className="text-gray-400 mb-4">
               Connecting travelers with local experts for authentic experiences
@@ -132,7 +132,7 @@ export function Footer() {
         {/* Bottom Bar */}
         <div className="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center">
           <p className="text-gray-400 text-sm mb-4 md:mb-0">
-            © 2024 LocalGuide. All rights reserved.
+            © 2024 Traddy. All rights reserved.
           </p>
           <div className="flex space-x-6 text-sm">
             <a href="#" className="hover:text-blue-500 transition-colors">

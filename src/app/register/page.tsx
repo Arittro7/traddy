@@ -3,9 +3,9 @@ import { getCurrentUser } from "@/services/auth/auth.service";
 import RegisterClient from "@/components/modules/Auth/RegisterForm";
 
 export const metadata = {
-  title: "Register | LocalGuide - Create Your Account",
+  title: "Register | Traddy - Create Your Account",
   description:
-    "Join LocalGuide as a tourist or guide. Start your journey with local experts and authentic experiences.",
+    "Join Traddy as a tourist or guide. Start your journey with local experts and authentic experiences.",
 };
 
 interface RegisterPageProps {
