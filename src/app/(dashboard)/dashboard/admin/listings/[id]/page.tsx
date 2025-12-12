@@ -525,7 +525,7 @@ const ListingDetails = () => {
       </div>
 
       {/* Footer CTA */}
-      <div className="bg-gradient-to-r from-blue-600 to-indigo-600 text-white mt-12">
+      <div className="bg-gray-950 text-white mt-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
           <div className="text-center">
             <h2 className="text-3xl font-bold mb-4">
