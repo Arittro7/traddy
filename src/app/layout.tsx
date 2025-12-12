@@ -14,8 +14,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Local Guide App",
-  description: "An app to help you find local guides and explore new places.",
+  title: "Traddy",
+  description: "Your trusted travel buddy to help you find local guides and explore new places.",
 };
 
 export default function RootLayout({
