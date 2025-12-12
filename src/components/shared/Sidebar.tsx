@@ -5,15 +5,15 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import {
   Home,
+  ClipboardList,
+  BookCheck,
   Compass,
   User,
   LogOut,
   Calendar,
-  Briefcase,
-  Shield,
-  Settings,
   Menu,
   X,
+
 } from "lucide-react";
 import { useState, useEffect } from "react";
 
@@ -37,11 +37,6 @@ export default function Sidebar() {
 
   // Tourist navigation
   const touristNav = [
-    // {
-    //   href: "/dashboard/tourist",
-    //   icon: <Calendar className="w-5 h-5" />,
-    //   label: "My Bookings",
-    // },
     {
       href: "/dashboard/tourist/wishlist",
       icon: <Home className="w-5 h-5" />,
@@ -56,11 +51,6 @@ export default function Sidebar() {
 
   // Guide navigation
   const guideNav = [
-    // {
-    //   href: "/dashboard/guide",
-    //   icon: <Briefcase className="w-5 h-5" />,
-    //   label: "Dashboard",
-    // },
     {
       href: "/dashboard/guide/my-listings",
       icon: <Home className="w-5 h-5" />,
@@ -80,36 +70,22 @@ export default function Sidebar() {
 
   // Admin navigation
   const adminNav = [
-    // {
-    //   href: "/dashboard/admin",
-    //   icon: <Shield className="w-5 h-5" />,
-    //   label: "Admin Dashboard",
-    // },
     {
       href: "/dashboard/admin/users",
       icon: <User className="w-5 h-5" />,
-      label: "Manage Users",
+      label: "Users",
     },
     {
       href: "/dashboard/admin/listings",
-      icon: <Home className="w-5 h-5" />,
-      label: "Manage Listings",
+      icon: <ClipboardList className="w-5 h-5" />,
+      label: "Listings",
     },
     {
       href: "/dashboard/admin/bookings",
-      icon: <Home className="w-5 h-5" />,
-      label: "Manage Bookings",
+      icon: <BookCheck className="w-5 h-5" />,
+      label: "Bookings",
     },
   ];
-
-  // Common navigation
-  // const commonNav = [
-  //   {
-  //     href: "/settings",
-  //     icon: <Settings className="w-5 h-5" />,
-  //     label: "Settings",
-  //   },
-  // ];
 
   // Get navigation based on user role
   const getNavItems = () => {
@@ -155,8 +131,8 @@ export default function Sidebar() {
       {/* User info */}
       {user && (
         <div className="mb-6 p-3 bg-blue-50 rounded-lg">
-          <p className="font-medium text-gray-900">{user.name}</p>
-          <p className="text-sm text-gray-600 capitalize">
+          <p className="text-xl  text-gray-900 font-medium uppercase">{user.name}</p>
+          <p className="text-sm bg-orange-400 text-gray-100 px-2 capitalize">
             {user.role.toLowerCase()}
           </p>
         </div>
@@ -173,7 +149,7 @@ export default function Sidebar() {
               onClick={() => setIsMobileOpen(false)}
               className={`flex items-center space-x-3 p-3 rounded-lg transition-colors ${
                 active
-                  ? "bg-blue-100 text-blue-600 border-l-4 border-blue-600"
+                  ? "bg-[#F08787]  border-l-4 border-[#e73a3a]"
                   : "text-gray-700 hover:bg-blue-50 hover:text-blue-600"
               }`}
             >
