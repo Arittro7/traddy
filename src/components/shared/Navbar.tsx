@@ -25,7 +25,7 @@ export function Navbar() {
                 Traddy
               </span>
             </Link>
-            <div className="text-gray-500">Loading...</div>
+            <div className="text-gray-500">Connecting...</div>
           </div>
         </div>
       </nav>
