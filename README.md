@@ -8,8 +8,8 @@ A full-stack platform connecting travelers with passionate local experts who off
 
 | Service                    | URL                                                                                            |
 | -------------------------- | ---------------------------------------------------------------------------------------------- |
-| **Frontend (Live)**        | [url here](url here)   |
-| **Backend (API Base URL)** | [url here](url here) |
+| **Frontend (Live)**        | [Traddy](https://traddy.vercel.app/)  |
+| **Backend (API Base URL)** | [Traddy-server](https://traddy-server.onrender.com/) |
 
 ---
 
@@ -27,9 +27,9 @@ Use the following accounts for testing the platform:
 
 ## 🚀 Project Overview
 
-Local Guide Platform empowers locals to share their city’s hidden gems, culture, and stories through tours and experiences. Travelers can search, filter, and book guides that match their interests — whether for food walks, adventure trips, cultural tours, or photography sessions.
+Traddy is a community-driven guide platform that enables locals to showcase their city’s hidden treasures, cultural richness, and personal stories through curated tours and experiences. Travelers can easily search, filter, and book guides tailored to their interests — from food walks and adventure outings to cultural immersions and photography journeys.
 
-The platform democratizes travel guiding, making tourism more authentic and community-driven.
+By opening up guiding opportunities to everyone, Traddy makes tourism more genuine, inclusive, and rooted in local communities.
 
 ---
 
@@ -110,8 +110,6 @@ The platform democratizes travel guiding, making tourism more authentic and comm
 
 - Vercel (Frontend)
 - Render (Backend)
-- Optional CI/CD
-
 ---
 
 ## ⚙️ Installation
@@ -120,7 +118,7 @@ The platform democratizes travel guiding, making tourism more authentic and comm
 
 ```bash
 git clone https://github.com/arittro7/traddy.git
-cd local-guide-platform
+cd traddy
 ```
 
 ### 2️⃣ Install dependencies
@@ -128,14 +126,17 @@ cd local-guide-platform
 **Frontend**
 
 ```bash
-cd frontend
 npm install
 ```
 
 **Backend**
 
 ```bash
-cd backend
+git clone https://github.com/arittro7/traddy-server.git
+cd traddy-server
+```
+
+```bash
 npm install
 ```
 
@@ -160,78 +161,30 @@ npm run start:dev
 ### **Backend (.env example)**
 
 ```
-PORT=5000
-DATABASE_URL=your_database_url
-JWT_SECRET=your_jwt_secret
-CLOUDINARY_KEY=...
-CLOUDINARY_SECRET=...
-STRIPE_SECRET_KEY=...
+PORT=value
+DB_URL=value
+NODE_ENV=value
+JWT_ACCESS_SECRET=value
+JWT_ACCESS_EXPIRES=value
+JWT_REFRESH_SECRET=value
+JWT_REFRESH_EXPIRES=value
+PASSWORD_SALT_ROUND=value
+FRONTEND_URL=value
+CLOUDINARY_CLOUD_NAME=value
+CLOUDINARY_API_KEY=value
+CLOUDINARY_API_SECRET=value
+STRIPE_SECRET_KEY=value
+STRIPE_WEBHOOK_SECRET=value
 ```
 
 ### **Frontend (.env.local)**
 
 ```
-NEXT_PUBLIC_API_URL=https://local-guide-backend-0p6e.onrender.com
-NEXT_PUBLIC_CLOUDINARY_KEY=...
+NEXT_PUBLIC_API_URL=value
+NODE_ENV=value
+JWT_SECRET=value
+REFRESH_TOKEN_SECRET=value
 ```
-
----
-
-## 📡 API Overview
-
-| Method | Endpoint                | Description     |
-| ------ | ----------------------- | --------------- |
-| POST   | `/api/auth/register`    | Register user   |
-| POST   | `/api/auth/login`       | Login user      |
-| GET    | `/api/users/:id`        | Get profile     |
-| PATCH  | `/api/users/:id`        | Update profile  |
-| GET    | `/api/listings`         | Search listings |
-| POST   | `/api/listings`         | Create listing  |
-| PATCH  | `/api/listings/:id`     | Edit listing    |
-| DELETE | `/api/listings/:id`     | Delete listing  |
-| POST   | `/api/bookings`         | Request booking |
-| PATCH  | `/api/bookings/:id`     | Accept / Reject |
-| POST   | `/api/reviews`          | Add review      |
-| POST   | `/api/payments/booking` | Process payment |
-
----
-
-## 🖥️ Frontend Architecture
-
-### Key Pages
-
-- `/` — Landing page
-- `/explore` — Search + filters
-- `/tours/[id]` — Tour details
-- `/dashboard` — Guide/Tourist/Admin panels
-- `/profile/[id]` — User public profile
-
-### Components
-
-- Role-based Navbar
-- Listing Cards
-- Booking Widget
-- Review Section
-- Photo Gallery
-
----
-
-## 🧩 Backend Architecture
-
-Modules:
-
-- **Users** — auth, profiles, roles
-- **Listings** — tour CRUD
-- **Bookings** — workflow & status
-- **Reviews** — feedback & rating
-- **Payments** — secure processing
-
-Middleware:
-
-- Auth
-- Role-based access
-- Validation
-- Error handling
 
 ---
 
@@ -259,16 +212,3 @@ Middleware:
 - Manage listings
 - Monitor bookings
 
----
-
-## 🤝 Contributing
-
-1. Fork the repo
-2. Create a feature branch
-3. Submit a pull request
-
----
-
-## 📜 License
-
-Licensed under the **MIT License**.
