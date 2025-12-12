@@ -9,7 +9,7 @@ export default function CTASection() {
 
   return (
     <section className="text-center">
-      <div className="bg-gradient-to-r from-blue-600 to-blue-700 rounded-2xl p-12 text-white">
+      <div className="bg-gradient-to-r bg-[#465228] rounded-2xl p-12 text-white">
         <h2 className="text-3xl md:text-4xl font-bold mb-6">
           Start Your Journey Today
         </h2>
