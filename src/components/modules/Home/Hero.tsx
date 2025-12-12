@@ -4,7 +4,7 @@ import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 export function Hero() {
   return (
-    <section className="relative bg-gradient-to-br from-green-600 via-green-700 to-emerald-800 text-white">
+    <section className="relative bg-gradient-to-br from-green-600 via-green-700 to-emerald-900 text-white">
       <div className="absolute inset-0 bg-black opacity-20"></div>
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 md:py-32">
@@ -21,7 +21,7 @@ export function Hero() {
           </p>
 
           {/* Search Bar */}
-          <div className="bg-yellow-400 rounded-2xl shadow-2xl p-4 md:p-6 max-w-3xl mx-auto mb-8">
+          <div className="bg-orange-400 rounded-2xl shadow-2xl p-4 md:p-6 max-w-3xl mx-auto mb-8">
             <div className="flex flex-col md:flex-row gap-4">
               <div className="flex-1 relative">
                 <MapPin className="absolute left-4 top-1/2 transform -translate-y-1/2 text-black w-5 h-5" />
@@ -37,20 +37,7 @@ export function Hero() {
               </Button>
             </div>
           </div>
-
-          {/* CTAs */}
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button variant="primary" size="lg">
-              Find Your Guide
-            </Button>
-            <Button
-              variant="outline"
-              size="lg"
-              className="bg-white hover:bg-gray-50"
-            >
-              Become a Guide
-            </Button>
-          </div>
+          
         </div>
       </div>
 

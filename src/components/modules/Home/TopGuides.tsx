@@ -11,29 +11,29 @@ export function TopGuides() {
       languages: ["English", "French"],
       specialty: "Art & History",
       image:
-        "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400&q=80",
+        "https://images.unsplash.com/photo-1589570140724-cea446042562?q=80&w=1074&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       rate: "$45/hour",
     },
     {
-      name: "Kenji Tanaka",
-      city: "Tokyo",
+      name: "Mr. Oreo",
+      city: "Turkey",
       rating: 5.0,
       reviews: 89,
-      languages: ["English", "Japanese"],
-      specialty: "Food & Culture",
+      languages: ["English", "Spanish", "French", "Arabic"],
+      specialty: "Art, History, Photography",
       image:
-        "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&q=80",
-      rate: "$50/hour",
+        "https://images.unsplash.com/photo-1615109398623-88346a601842?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      rate: "$150/hour",
     },
     {
-      name: "Sofia Rodriguez",
+      name: "Andru Rodriguez",
       city: "Barcelona",
       rating: 4.8,
       reviews: 156,
       languages: ["English", "Spanish", "Catalan"],
       specialty: "Architecture",
       image:
-        "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400&q=80",
+        "https://plus.unsplash.com/premium_photo-1661602011150-6c6f8b9ba788?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       rate: "$40/hour",
     },
   ];

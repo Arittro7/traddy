@@ -1,4 +1,3 @@
-import React from "react";
 import { TrendingUp, DollarSign, Calendar } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
