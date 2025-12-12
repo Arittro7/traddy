@@ -8,13 +8,8 @@ A full-stack platform connecting travelers with passionate local experts who off
 
 | Service                    | URL                                                                                            |
 | -------------------------- | ---------------------------------------------------------------------------------------------- |
-<<<<<<< HEAD
 | **Frontend (Live)**        | [url here](url here)   |
 | **Backend (API Base URL)** | [url here](url here) |
-=======
-| **Frontend (Live)**        | [url will paste here](url will pasre here/)   |
-| **Backend (API Base URL)** | [url will paste here](url will paste here) |
->>>>>>> a38054f8990a49c850df7c270b1153efc3530b63
 
 ---
 
@@ -24,9 +19,9 @@ Use the following accounts for testing the platform:
 
 | Role        | Email                  | Password      |
 | ----------- | ---------------------- | ------------- |
-| **Admin**   | `admin@admin.com`      | `admin123`    |
-| **Tourist** | `tourist4@example.com` | `password123` |
-| **Guide**   | `guide@example.com`    | `password123` |
+| **Admin**   | `admin@gmail.com`      | `123456`      |
+| **Tourist** | `pihu@tourist.com`     | `Tourist@123` |
+| **Guide**   | `oreo@guide.com`       | `Guide@123`   |
 
 ---
 
