@@ -574,12 +574,12 @@ export default function UserManagementClient({
                             {user.role === "TOURIST" ? (
                               <span className="flex items-center justify-center gap-1">
                                 <UserCheck className="w-3 h-3" />
-                                Promote to Guide
+                                Make Guide
                               </span>
                             ) : (
                               <span className="flex items-center justify-center gap-1">
                                 <UserX className="w-3 h-3" />
-                                Demote to Tourist
+                                Make Tourist
                               </span>
                             )}
                           </button>
