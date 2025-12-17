@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 // components/modules/Admin/Users/EditUserDialogue.tsx
 "use client";
 
@@ -579,7 +580,7 @@ export function EditUserDialog({ userId, onSuccess }: EditUserDialogProps) {
             )}
 
             {/* Action Buttons */}
-            <DialogFooter className="gap-2 sm:gap-0 pt-4 border-t">
+            <DialogFooter className="gap-2 sm:gap-2 pt-4 border-t">
               <DialogClose asChild>
                 <Button
                   type="button"
@@ -592,7 +593,7 @@ export function EditUserDialog({ userId, onSuccess }: EditUserDialogProps) {
               <Button
                 type="submit"
                 disabled={loading}
-                className="min-w-[100px] bg-green-600 hover:bg-green-700"
+                className="min-w-[100px] bg-yellow-600 hover:bg-green-700"
               >
                 {loading ? (
                   <>
@@ -600,7 +601,7 @@ export function EditUserDialog({ userId, onSuccess }: EditUserDialogProps) {
                     Saving...
                   </>
                 ) : (
-                  "Save Changes"
+                  "Save"
                 )}
               </Button>
             </DialogFooter>

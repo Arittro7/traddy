@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
 
 import { useState, useEffect } from "react";
@@ -201,14 +202,15 @@ export default function ProfilePageWrapper() {
       <div className="relative">
         {/* Background Cover */}
         <div
-          className={`h-64 ${
-            isGuide
-              ? "bg-gradient-to-r from-green-600 to-emerald-600"
-              : user.role === "ADMIN"
-              ? "bg-gradient-to-r from-purple-600 to-indigo-600"
-              : "bg-gradient-to-r from-blue-600 to-purple-600"
-          }`}
-        ></div>
+  className="h-64 bg-cover bg-center rounded"
+  style={{
+    backgroundImage: isGuide
+      ? "url('https://plus.unsplash.com/premium_photo-1661425265757-8adc16a6983d?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')" // Guide
+      : user.role === "ADMIN"
+      ? "url('https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?q=80&w=1121&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')" // Admin
+      : "url('https://static.vecteezy.com/system/resources/thumbnails/001/128/259/small/travel-around-the-world-important-landmarks-poster-free-vector.jpg')" // Tourist
+  }}
+></div>
 
         {/* Profile Header Container */}
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 -mt-24">

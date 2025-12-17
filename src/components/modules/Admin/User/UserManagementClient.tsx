@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
 
 import React, { useState, useMemo, useEffect, useCallback } from "react";
@@ -213,7 +214,7 @@ export default function UserManagementClient({
           <p class="text-gray-700 mb-2">Are you sure you want to delete this user?</p>
           <div class="bg-red-50 border-l-4 border-red-500 p-3 mb-4">
             <p class="text-sm text-red-700">
-              <strong>Warning:</strong> This action cannot be undone. The user account will be permanently removed.
+              <strong>Warning!</strong> Once you delete the user account will be permanently removed.
             </p>
           </div>
           <div class="bg-gray-50 p-3 rounded">
@@ -559,13 +560,14 @@ export default function UserManagementClient({
                     {/* Actions */}
                     <td className="px-4 py-4">
                       <div className="space-y-3">
-                        {/* Change Role Button (only for TOURIST/GUIDE) */}
+                        <div className="flex gap-2 ">
+                          {/* Change Role Button (only for TOURIST/GUIDE) */}
                         {user.role !== "ADMIN" && (
                           <button
                             onClick={() =>
                               handleChangeRole(user._id, user.role, user.name)
                             }
-                            className={`w-full px-3 py-1.5 text-xs rounded transition-colors ${
+                            className={`w-full px-3 py-5 rounded transition-colors ${
                               user.role === "TOURIST"
                                 ? "bg-green-600 text-white hover:bg-green-700"
                                 : "bg-blue-600 text-white hover:bg-blue-700"
@@ -573,12 +575,12 @@ export default function UserManagementClient({
                           >
                             {user.role === "TOURIST" ? (
                               <span className="flex items-center justify-center gap-1">
-                                <UserCheck className="w-3 h-3" />
+                                <UserCheck className="w-5 h-6" />
                                 Make Guide
                               </span>
                             ) : (
                               <span className="flex items-center justify-center gap-1">
-                                <UserX className="w-3 h-3" />
+                                <UserX className="w-5 h-6" />
                                 Make Tourist
                               </span>
                             )}
@@ -594,7 +596,7 @@ export default function UserManagementClient({
                               user.name
                             )
                           }
-                          className={`w-full px-3 py-1.5 text-xs rounded transition-colors ${
+                          className={`w-full px-3 py-1.5 rounded transition-colors ${
                             user.isActive
                               ? "bg-red-600 text-white hover:bg-red-700"
                               : "bg-green-600 text-white hover:bg-green-700"
@@ -602,6 +604,8 @@ export default function UserManagementClient({
                         >
                           {user.isActive ? "Deactivate User" : "Activate User"}
                         </button>
+                        </div>
+
 
                         {/* Action Buttons */}
                         <div className="flex gap-2 pt-2 border-t">
