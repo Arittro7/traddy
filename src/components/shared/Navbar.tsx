@@ -4,6 +4,7 @@ import { Menu, X } from "lucide-react";
 import { Button } from "../ui/button";
 import Link from "next/link";
 import { useAuth } from "@/actions/useAuth";
+import { ModeToggle } from "../ModeToggle";
 
 export function Navbar() {
   const { user, isLoading, logout } = useAuth();
@@ -21,9 +22,7 @@ export function Navbar() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
             <Link href={"/"} className="flex items-center space-x-2">
-              <span className="text-2xl font-bold text-gray-900">
-                Traddy
-              </span>
+              <span className="text-2xl font-bold text-gray-900">Traddy</span>
             </Link>
             <div className="text-gray-500">Connecting...</div>
           </div>
@@ -33,21 +32,19 @@ export function Navbar() {
   }
 
   return (
-    <nav className="bg-white shadow-sm sticky top-0 z-50">
+    <nav className="bg-white dark:bg-gray-800 shadow-sm sticky top-0 z-50">
       <div className=" mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <Link href={"/"} className="flex items-center space-x-2">
-            
-            <span className="text-2xl font-bold text-gray-900">Traddy</span>
+            <span className="text-2xl font-bold">Traddy</span>
           </Link>
-
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
             {/* Always show these links */}
             <Link
               href="/explore"
-              className="text-gray-700 hover:text-blue-600 font-medium transition-colors"
+              className="hover:text-blue-600 dark:hover:text-yellow-300 font-medium transition-colors"
             >
               Explore Tours
             </Link>
@@ -61,7 +58,7 @@ export function Navbar() {
                   <>
                     <Link
                       href="/dashboard/guide/my-listings"
-                      className="text-gray-700 hover:text-blue-600 font-medium transition-colors"
+                      className="hover:text-blue-600 dark:hover:text-yellow-300 font-medium transition-colors"
                     >
                       Dashboard
                     </Link>
@@ -72,19 +69,19 @@ export function Navbar() {
                   <>
                     <Link
                       href="/dashboard/admin/bookings"
-                      className="text-gray-700 hover:text-blue-600 font-medium transition-colors"
+                      className="hover:text-blue-600 dark:hover:text-yellow-300 font-medium transition-colors"
                     >
                       Admin Dashboard
                     </Link>
                     <Link
                       href="/dashboard/admin/users"
-                      className="text-gray-700 hover:text-blue-600 font-medium transition-colors"
+                      className="hover:text-blue-600 dark:hover:text-yellow-300 font-medium transition-colors"
                     >
                       Manage Users
                     </Link>
                     <Link
                       href="/dashboard/admin/listings"
-                      className="text-gray-700 hover:text-blue-600 font-medium transition-colors"
+                      className="hover:text-blue-600 dark:hover:text-yellow-300 font-medium transition-colors"
                     >
                       Manage Listings
                     </Link>
@@ -95,7 +92,7 @@ export function Navbar() {
                   <>
                     <Link
                       href="/dashboard/tourist/my-trips"
-                      className="text-gray-700 hover:text-blue-600 font-medium transition-colors"
+                      className="hover:text-blue-600 dark:hover:text-yellow-300 font-medium transition-colors"
                     >
                       My Bookings
                     </Link>
@@ -105,7 +102,7 @@ export function Navbar() {
                 {/* Common for all logged in users */}
                 <Link
                   href={`/profile/${user._id || "me"}`}
-                  className="text-gray-700 hover:text-blue-600 font-medium transition-colors"
+                  className="hover:text-blue-600 dark:hover:text-yellow-300 font-medium transition-colors"
                 >
                   Profile
                 </Link>
@@ -115,7 +112,7 @@ export function Navbar() {
                   onClick={handleLogout}
                   variant="primary"
                   size="sm"
-                  className="text-gray-700 hover:text-blue-600"
+                  className="hover:text-blue-600 dark:hover:text-yellow-300"
                 >
                   Logout
                 </Button>
@@ -125,13 +122,13 @@ export function Navbar() {
               <>
                 <Link
                   href="/become-guide"
-                  className="text-gray-700 hover:text-blue-600 font-medium transition-colors"
+                  className="hover:text-blue-600 dark:hover:text-yellow-300 font-medium transition-colors"
                 >
                   Become a Guide
                 </Link>
                 <Link
                   href="/login"
-                  className="text-gray-700 hover:text-blue-600 font-medium transition-colors"
+                  className="hover:text-blue-600 dark:hover:text-yellow-300 font-medium transition-colors"
                 >
                   Login
                 </Link>
@@ -141,7 +138,9 @@ export function Navbar() {
                   </Button>
                 </Link>
               </>
+
             )}
+            <ModeToggle/>
           </div>
 
           {/* Mobile Menu Button */}
@@ -164,7 +163,7 @@ export function Navbar() {
             {/* Always show these links */}
             <Link
               href="/explore"
-              className="block text-gray-700 hover:text-blue-600 font-medium py-2"
+              className="block hover:text-blue-600 dark:hover:text-yellow-300 font-medium py-2"
               onClick={() => setIsMenuOpen(false)}
             >
               Explore Tours
@@ -179,7 +178,7 @@ export function Navbar() {
                   <>
                     <Link
                       href="/dashboard/guide/my-listings"
-                      className="block text-gray-700 hover:text-blue-600 font-medium py-2"
+                      className="block hover:text-blue-600 dark:hover:text-yellow-300 font-medium py-2"
                       onClick={() => setIsMenuOpen(false)}
                     >
                       Dashboard
@@ -191,20 +190,20 @@ export function Navbar() {
                   <>
                     <Link
                       href="/dashboard/admin/bookings"
-                      className="block text-gray-700 hover:text-blue-600 font-medium py-2"
+                      className="block hover:text-blue-600 dark:hover:text-yellow-300 font-medium py-2"
                       onClick={() => setIsMenuOpen(false)}
                     >
                       Admin Dashboard
                     </Link>
                     <Link
                       href="/dashboard/admin/users"
-                      className="block text-gray-700 hover:text-blue-600 font-medium py-2"
+                      className="block hover:text-blue-600 dark:hover:text-yellow-300 font-medium py-2"
                     >
                       Manage Users
                     </Link>
                     <Link
                       href="/dashboard/admin/listings"
-                      className="block text-gray-700 hover:text-blue-600 font-medium py-2"
+                      className="block hover:text-blue-600 dark:hover:text-yellow-300 font-medium py-2"
                     >
                       Manage Listings
                     </Link>
@@ -215,7 +214,7 @@ export function Navbar() {
                   <>
                     <Link
                       href="/dashboard/tourist/wishlist"
-                      className="block text-gray-700 hover:text-blue-600 font-medium py-2"
+                      className="block hover:text-blue-600 dark:hover:text-yellow-300 font-medium py-2"
                       onClick={() => setIsMenuOpen(false)}
                     >
                       Dashboard
@@ -226,7 +225,7 @@ export function Navbar() {
                 {/* Common for all logged in users */}
                 <Link
                   href={`/profile/${user._id || "me"}`}
-                  className="block text-gray-700 hover:text-blue-600 font-medium py-2"
+                  className="block hover:text-blue-600 dark:hover:text-yellow-300 font-medium py-2"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   Profile
@@ -237,7 +236,7 @@ export function Navbar() {
                   onClick={handleLogout}
                   variant="primary"
                   size="sm"
-                  className="w-full text-gray-700 hover:text-blue-600"
+                  className="w-full hover:text-blue-600 dark:hover:text-yellow-300"
                 >
                   Logout
                 </Button>
@@ -247,14 +246,14 @@ export function Navbar() {
               <>
                 <Link
                   href="/become-guide"
-                  className="block text-gray-700 hover:text-blue-600 font-medium py-2"
+                  className="block hover:text-blue-600 dark:hover:text-yellow-300 font-medium py-2"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   Become a Guide
                 </Link>
                 <Link
                   href="/login"
-                  className="block text-gray-700 hover:text-blue-600 font-medium py-2"
+                  className="block hover:text-blue-600 dark:hover:text-yellow-300 font-medium py-2"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   Login

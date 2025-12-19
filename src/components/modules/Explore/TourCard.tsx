@@ -62,14 +62,14 @@ export default function TourCard({
       <CardContent className="flex-1 p-6 flex flex-col">
         {/* Title and Location */}
         <div className="mb-4">
-          <h3 className="text-xl font-bold text-gray-900 line-clamp-1 mb-2">
+          <h3 className="text-xl font-bold line-clamp-1 mb-2">
             {tour.title}
           </h3>
-          <div className="flex items-center text-gray-600 mb-2">
+          <div className="flex items-center  mb-2">
             <MapPin className="w-4 h-4 mr-2" />
             <span className="text-sm">{tour.city}</span>
           </div>
-          <p className="text-gray-600 line-clamp-2 text-sm">
+          <p className=" line-clamp-2 text-sm">
             {tour.description}
           </p>
         </div>
@@ -94,7 +94,7 @@ export default function TourCard({
             )}
           </div>
           <div>
-            <p className="font-semibold text-gray-900">{tour.guide.name}</p>
+            <p className="font-semibold  ">{tour.guide.name}</p>
             <Link
               href={`/profile/${tour.guide._id}`}
               className="text-sm text-blue-600 hover:text-blue-800 hover:underline"

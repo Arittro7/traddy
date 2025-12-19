@@ -1,3 +1,5 @@
+/* eslint-disable prefer-const */
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import EmptyState from "@/components/modules/Explore/EmptyState";
 import ExploreHero from "@/components/modules/Explore/ExploreHero";
 import SearchFilters from "@/components/modules/Explore/SearchFilters";
