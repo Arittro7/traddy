@@ -1,18 +1,34 @@
-
 import { Search, MapPin } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
+
 export function Hero() {
   return (
-    <section className="relative bg-gradient-to-br from-green-600 via-green-700 to-emerald-900 text-white">
-      <div className="absolute inset-0 bg-black opacity-20"></div>
+    <section className="relative text-white">
+      {/* Background Video */}
+      <video
+        className="absolute inset-0 w-full h-full object-cover"
+        autoPlay
+        loop
+        muted
+        playsInline
+      >
+        <source
+          src="/videos/hero-video.mp4"
+          type="video/mp4"
+        />
+      </video>
 
+      {/* Overlay */}
+      <div className="absolute inset-0 bg-black/40"></div>
+
+      {/* Content */}
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 md:py-32">
         <div className="text-center max-w-4xl mx-auto">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-2 leading-tight">
             Welcome to Traddy
           </h1>
-          <p className="text-xl md:text-2xl font-semibold text-green-400">
+          <p className="text-xl md:text-2xl font-semibold text-green-300">
             YOUR TRUSTED TRAVEL BUDDY TO EXPLORE CITIES LIKE LOCAL
           </p>
           <p className="text-xl md:text-2xl mb-12">
@@ -37,7 +53,6 @@ export function Hero() {
               </Button>
             </div>
           </div>
-          
         </div>
       </div>
 
