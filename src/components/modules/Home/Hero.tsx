@@ -22,7 +22,7 @@ export function Hero() {
       {/* Content */}
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 md:py-32">
         <div className="text-center max-w-4xl mx-auto">
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-2 leading-tight">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 mt-6 leading-tight">
             Welcome to Traddy
           </h1>
           <p className="text-xl md:text-3xl font-semibold text-gray-300">
@@ -56,7 +56,7 @@ export function Hero() {
       </div>
 
       {/* Decorative Wave */}
-      <div className="absolute bottom-0 left-0 right-0">
+      {/* <div className="absolute bottom-0 left-0 right-0">
         <svg
           viewBox="0 0 1440 120"
           fill="none"
@@ -67,7 +67,7 @@ export function Hero() {
             fill="white"
           />
         </svg>
-      </div>
+      </div> */}
     </section>
   );
 }

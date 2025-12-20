@@ -5,46 +5,46 @@ export function FeaturedCities() {
     {
       name: "Paris",
       country: "France",
-      guides: 70,
+      guides: 132,
       image:
         "https://images.unsplash.com/photo-1502602898657-3e91760cbb34?w=800&q=80",
       description: "Explore the Eiffel Tower and charming hidden cafés.",
     },
     {
-      name: "Tokyo",
-      country: "Japan",
-      guides: 47,
+      name: "New York",
+      country: "USA",
+      guides: 180,
       image:
-        "https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?w=800&q=80",
-      description: "Experience Shibuya Crossing and authentic street food.",
+        "https://images.unsplash.com/photo-1642873744568-a7c5f7d10aae?q=80&w=751&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      description: "Visit Times Square and Central Park.",
     },
     {
       name: "Istanbul",
       country: "Turkey",
-      guides: 153,
+      guides: 220,
       image:
         "https://media.cntraveller.com/photos/68ff3db8e7084c26e7744dee/1:1/w_2160,h_2160,c_limit/1480863367",
       description: "Marvel at Hagia Sophia and the Grand Bazaar.",
     },
     {
-      name: "New York",
-      country: "USA",
-      guides: 210,
+      name: "Sydney",
+      country: "Australia",
+      guides: 76,
       image:
-        "https://images.unsplash.com/photo-1496442226666-8d4d0e62e6e9?w=800&q=80",
-      description: "Visit Times Square and Central Park.",
-    },
+        "https://images.unsplash.com/photo-1559507703-7b0e88e1bebf?q=80&w=683&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      description: "Experience Shibuya Crossing and authentic street food.",
+    }
   ];
 
   return (
-    <section className="py-20 bg-white">
+    <section className="py-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Heading */}
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+          <h2 className="text-3xl md:text-4xl font-bold  mb-4">
             Popular Destinations
           </h2>
-          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+          <p className="text-xl max-w-2xl mx-auto">
             Discover amazing experiences in cities around the world
           </p>
         </div>

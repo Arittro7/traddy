@@ -16,7 +16,7 @@ export function Testimonials() {
       image:
         "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&q=80",
       rating: 5,
-      text: "Kenji delivered an outstanding culinary journey through Tokyo. His deep knowledge of local cuisine and cultural context provided an authentic and enriching experience that went far beyond expectations.",
+      text: "Mansor Ali delivered an outstanding culinary journey through Tokyo. His deep knowledge of local cuisine and cultural context provided an authentic and enriching experience that went far beyond expectations.",
     },
     {
       name: "Emma Williams",
@@ -24,7 +24,7 @@ export function Testimonials() {
       image:
         "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=400&q=80",
       rating: 5,
-      text: "Sofia’s architectural tour of Barcelona was both insightful and engaging. Her ability to bring Gaudí’s work to life through stories and historical context offered a perspective unavailable in traditional guidebooks.",
+      text: "Andru architectural tour of Barcelona was both insightful and engaging. His ability to bring Gaudí’s work to life through stories and historical context offered a perspective unavailable in traditional guidebooks.",
     },
   ];
 

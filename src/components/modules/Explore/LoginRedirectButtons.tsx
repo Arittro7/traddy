@@ -17,14 +17,7 @@ export default function LoginRedirectButtons({
   const router = useRouter();
 
   const handleViewDetails = () => {
-    if (!isAuthenticated) {
-      const loginUrl = `/login?redirect=${encodeURIComponent(
-        `/tours/${tourId}`
-      )}`;
-      router.push(loginUrl);
-    } else {
       router.push(`/tours/${tourId}`);
-    }
   };
 
   const handleBookNow = () => {
