@@ -1,10 +1,7 @@
-import { Search, MapPin } from "lucide-react";
-import { Input } from "@/components/ui/input";
-import { Button } from "@/components/ui/button";
 
 export function Hero() {
   return (
-    <section className="relative text-white">
+    <section className="relative h-screen text-white">
       {/* Background Video */}
       <video
         className="absolute inset-0 w-full h-full object-cover"
@@ -28,16 +25,17 @@ export function Hero() {
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-2 leading-tight">
             Welcome to Traddy
           </h1>
-          <p className="text-xl md:text-2xl font-semibold text-green-300">
+          <p className="text-xl md:text-3xl font-semibold text-gray-300">
             YOUR TRUSTED TRAVEL BUDDY TO EXPLORE CITIES LIKE LOCAL
           </p>
+          
           <p className="text-xl md:text-2xl mb-12">
             Connect with passionate local guides for authentic, personalized
             experiences that go beyond the tourist trail
           </p>
 
           {/* Search Bar */}
-          <div className="bg-orange-400 rounded-2xl shadow-2xl p-4 md:p-6 max-w-3xl mx-auto mb-8">
+          {/* <div className="bg-orange-400 rounded-2xl shadow-2xl p-4 md:p-6 max-w-3xl mx-auto mb-8">
             <div className="flex flex-col md:flex-row gap-4">
               <div className="flex-1 relative">
                 <MapPin className="absolute left-4 top-1/2 transform -translate-y-1/2 text-black w-5 h-5" />
@@ -52,7 +50,8 @@ export function Hero() {
                 Search Tours
               </Button>
             </div>
-          </div>
+          </div> */}
+
         </div>
       </div>
 

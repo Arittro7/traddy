@@ -39,6 +39,7 @@ export function FeaturedCities() {
   return (
     <section className="py-20 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Section Heading */}
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
             Popular Destinations
@@ -48,6 +49,7 @@ export function FeaturedCities() {
           </p>
         </div>
 
+        {/* City Cards */}
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {cities.map((city, index) => (
             <div
@@ -55,6 +57,7 @@ export function FeaturedCities() {
               className="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 cursor-pointer"
             >
               <div className="aspect-[4/5] relative">
+                {/* Image */}
                 <img
                   src={city.image}
                   alt={`${city.name}, ${city.country}`}
@@ -62,18 +65,28 @@ export function FeaturedCities() {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
 
-                <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
-                  <h3 className="text-2xl font-bold mb-1">{city.name}</h3>
-                  <p className="text-blue-200 mb-2">{city.country}</p>
-                  <div className="flex items-center text-sm">
+                {/* City + Country */}
+                <div className="absolute bottom-0 left-0 right-0 p-6 text-white hover:text-yellow-500 transition-all duration-300">
+                  <div className="">
+                    <h3 className="text-xl font-bold group-hover:text-4xl transition-all duration-300">
+                      {city.name}
+                    </h3>
+                    <p className="group-hover:text-3xl transition-all duration-300">
+                      {city.country}
+                    </p>
+                  </div>
+                  <div className="flex items-center text-sm mt-2">
                     <MapPin className="w-4 h-4 mr-1" />
                     <span>{city.guides} local guides</span>
                   </div>
                 </div>
 
                 {/* Tooltip */}
-                <div className="absolute text-xl top-4 left-4 bg-white/80 text-black  rounded-lg px-3 py-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  {city.description}
+                <div className="absolute top-6 left-6 right-6 bg-gradient-to-r from-white/90 to-gray-100/90 text-gray-900 rounded-xl px-4 py-3 shadow-lg opacity-0 group-hover:opacity-100 transform group-hover:translate-y-0 -translate-y-4 transition-all duration-500">
+                  <p className="text-sm font-medium text-center">
+                    {city.description}
+                  </p>
+                  <div className="absolute -top-2 left-8 w-4 h-4 bg-white rotate-45 shadow-md"></div>
                 </div>
               </div>
             </div>
