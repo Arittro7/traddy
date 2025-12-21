@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
 
 import React, { useState } from "react";
@@ -99,26 +100,26 @@ export default function LoginForm({ redirectTo }: LoginFormProps) {
         )}
 
         <div className="relative">
-          <Mail className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5 mt-3" />
+          <Mail className="absolute left-4 top-1/2 transform -translate-y-1/2 text-black w-5 h-5 mt-3" />
           <Input
             type="email"
             name="email"
             label="Email Address"
             placeholder="you@example.com"
-            className="pl-12"
+            className="pl-12 text-black "
             required
             disabled={formLoading}
           />
         </div>
 
         <div className="relative">
-          <Lock className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5 mt-3" />
+          <Lock className="absolute left-4 top-1/2 transform -translate-y-1/2 text-black w-5 h-5 mt-3" />
           <Input
             type={showPassword ? "text" : "password"}
             name="password"
             label="Password"
             placeholder="Enter your password"
-            className="pl-12 pr-12"
+            className="pl-12 pr-12 text-blacZ"
             required
             disabled={formLoading}
           />
@@ -167,7 +168,7 @@ export default function LoginForm({ redirectTo }: LoginFormProps) {
 
       {/* Sign Up Link */}
       <p className="mt-6 text-center text-sm text-gray-600">
-        Don't have an account?{" "}
+        Don&#39;t have an account?{" "}
         <Link
           href="/register"
           className="text-blue-600 hover:text-blue-700 font-semibold"

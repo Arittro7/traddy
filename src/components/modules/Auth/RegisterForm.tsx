@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
 
 import React, { useState, useRef, useEffect } from "react";
@@ -18,6 +19,7 @@ import { Button } from "@/components/ui/button";
 import { useRouter } from "next/navigation";
 import { useAuth } from "@/actions/useAuth";
 import Link from "next/link";
+import Image from "next/image";
 
 interface RegisterClientProps {
   initialRole: string;
@@ -273,22 +275,21 @@ function RegisterClient({ initialRole }: RegisterClientProps) {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-green-50 flex items-center justify-center p-4 py-12">
+    <div className="min-h-screen bg-[#011127] flex items-center justify-center p-4 py-12">
       <div className="w-full max-w-2xl">
         {/* Logo */}
         <div className="text-center mb-8">
           <div className="flex items-center justify-center space-x-2 mb-4">
             <MapPin className="w-10 h-10 text-blue-600" />
-            <span className="text-3xl font-bold text-gray-900">Traddy</span>
+            <span className="text-3xl font-bold ">Traddy</span>
           </div>
-          <h1 className="text-2xl font-bold text-gray-900 mb-2">
+          <h1 className="text-2xl font-bold mb-2">
             Create Your Account
           </h1>
-          <p className="text-gray-600">Start your journey with local experts</p>
-        </div>
-
+          <p>Start your journey with local experts</p>
+        </div>        
         {/* Registration Form */}
-        <div className="bg-white rounded-2xl shadow-xl p-8">
+           <div className="bg-white rounded-2xl shadow-xl p-8">
           <form onSubmit={handleSubmit} className="space-y-5">
             {/* Error Message */}
             {error && (
@@ -404,7 +405,7 @@ function RegisterClient({ initialRole }: RegisterClientProps) {
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
               <div className="relative">
-                <User className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5 mt-3" />
+                <User className="absolute left-4 top-1/2 transform -translate-y-1/2 text-black w-5 h-5 mt-3" />
                 <Input
                   type="text"
                   name="name"
@@ -417,13 +418,13 @@ function RegisterClient({ initialRole }: RegisterClientProps) {
                       name: e.target.value,
                     })
                   }
-                  className="pl-12"
+                  className="pl-12 text-black"
                   required
                 />
               </div>
 
               <div className="relative">
-                <Mail className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5 mt-3" />
+                <Mail className="absolute left-4 top-1/2 transform -translate-y-1/2 text-black w-5 h-5 mt-3" />
                 <Input
                   type="email"
                   name="email"
@@ -436,7 +437,7 @@ function RegisterClient({ initialRole }: RegisterClientProps) {
                       email: e.target.value,
                     })
                   }
-                  className="pl-12"
+                  className="pl-12 text-black"
                   required
                 />
               </div>
@@ -444,7 +445,7 @@ function RegisterClient({ initialRole }: RegisterClientProps) {
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
               <div className="relative">
-                <Lock className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5 mt-3" />
+                <Lock className="absolute left-4 top-1/2 transform -translate-y-1/2 text-black w-5 h-5 mt-3" />
                 <Input
                   type={showPassword ? "text" : "password"}
                   name="password"
@@ -457,16 +458,16 @@ function RegisterClient({ initialRole }: RegisterClientProps) {
                       password: e.target.value,
                     })
                   }
-                  className="pl-12 pr-12"
+                  className="pl-12 text-black pr-12"
                   required
                 />
                 <button
                   type="button"
                   onClick={() => setShowPassword(!showPassword)}
-                  className="absolute right-4 top-1/2 transform -translate-y-1/2 text-gray-400 hover:text-gray-600 mt-3"
+                  className="absolute right-4 top-1/2 transform -translate-y-1/2 text-black hover:text-gray-600 mt-3"
                 >
                   {showPassword ? (
-                    <EyeOff className="w-5 h-5" />
+                    <EyeOff className="w-5 h-5 " />
                   ) : (
                     <Eye className="w-5 h-5" />
                   )}
@@ -474,7 +475,7 @@ function RegisterClient({ initialRole }: RegisterClientProps) {
               </div>
 
               <div className="relative">
-                <Lock className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5 mt-3" />
+                <Lock className="absolute left-4 top-1/2 transform -translate-y-1/2 text-black w-5 h-5 mt-3" />
                 <Input
                   type={showConfirmPassword ? "text" : "password"}
                   name="confirmPassword"
@@ -487,13 +488,13 @@ function RegisterClient({ initialRole }: RegisterClientProps) {
                       confirmPassword: e.target.value,
                     })
                   }
-                  className="pl-12 pr-12"
+                  className="pl-12 text-black pr-12"
                   required
                 />
                 <button
                   type="button"
                   onClick={() => setShowConfirmPassword(!showConfirmPassword)}
-                  className="absolute right-4 top-1/2 transform -translate-y-1/2 text-gray-400 hover:text-gray-600 mt-3"
+                  className="absolute right-4 top-1/2 transform -translate-y-1/2  text-black hover:text-gray-600 mt-3"
                 >
                   {showConfirmPassword ? (
                     <EyeOff className="w-5 h-5" />
@@ -506,7 +507,7 @@ function RegisterClient({ initialRole }: RegisterClientProps) {
 
             {/* Bio */}
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-2">
+              <label className="block text-sm font-medium text-black mb-2">
                 Bio (Optional)
               </label>
               <textarea
@@ -518,7 +519,7 @@ function RegisterClient({ initialRole }: RegisterClientProps) {
                   })
                 }
                 placeholder="Tell us a bit about yourself..."
-                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                className="w-full px-4 py-3 border text-black border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                 rows={3}
                 maxLength={500}
               />
@@ -702,9 +703,10 @@ function RegisterClient({ initialRole }: RegisterClientProps) {
               Sign in
             </Link>
           </p>
+          
+          </div>
         </div>
       </div>
-    </div>
   );
 }
 

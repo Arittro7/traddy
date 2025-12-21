@@ -3,7 +3,7 @@ import { Star } from "lucide-react";
 export function Testimonials() {
   const testimonials = [
     {
-      name: "Sarah Johnson",
+      name: "Emma Johnson",
       location: "New York, USA",
       image:
         "https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?w=400&q=80",
@@ -11,7 +11,7 @@ export function Testimonials() {
       text: "Marie curated an exceptional tour of Paris, guiding us to hidden cafés and local art galleries that we would never have discovered on our own. Her expertise and thoughtful approach made the experience truly memorable"
     },
     {
-      name: "David Chen",
+      name: "Samuel Brandon",
       location: "Toronto, Canada",
       image:
         "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&q=80",
@@ -19,7 +19,7 @@ export function Testimonials() {
       text: "Mansor Ali delivered an outstanding culinary journey through Tokyo. His deep knowledge of local cuisine and cultural context provided an authentic and enriching experience that went far beyond expectations.",
     },
     {
-      name: "Emma Williams",
+      name: "Keith Williams",
       location: "London, UK",
       image:
         "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=400&q=80",
