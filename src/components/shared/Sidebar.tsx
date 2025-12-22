@@ -176,7 +176,7 @@ export default function Sidebar() {
               onClick={() => setIsMobileOpen(false)}
               className={`flex items-center space-x-3 p-3 rounded-lg transition-colors ${
                 active
-                  ? "bg-[#001F3D] border-l-4 border-[#e73a3a]"
+                  ? "bg-[#001F3D] text-white border-l-4 border-[#e73a3a]"
                   : "text-gray-700 hover:bg-blue-50 hover:text-blue-600"
               }`}
             >
@@ -203,7 +203,7 @@ export default function Sidebar() {
       {/* Mobile Menu Button */}
       <button
         onClick={toggleMobile}
-        className="lg:hidden fixed top-8 right-4 z-50 p-2 bg-blue-600 text-white rounded-md shadow-lg hover:bg-blue-700 transition-colors"
+        className="lg:hidden fixed top-8 right-4 z-50 p-2 bg-blue-600 rounded-md shadow-lg hover:bg-blue-700 transition-colors"
       >
         {isMobileOpen ? (
           <X className="h-5 w-5" />
