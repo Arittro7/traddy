@@ -38,7 +38,7 @@ interface GuideDashboardClientProps {
 export default function GuideDashboardClient({
   dashboardData = {},
 }: GuideDashboardClientProps) {
-  // Safe data extraction with defaults
+  /* ---------- data extraction (unchanged) ---------- */
   const stats = dashboardData?.stats || {
     totalListings: 0,
     activeListings: 0,
@@ -54,48 +54,49 @@ export default function GuideDashboardClient({
   const recentReviews = dashboardData?.recentReviews || [];
   const activeListings = dashboardData?.activeListings || [];
 
+  /* -------------------------------------------------
+   1.  Re-ordered + richer stat cards
+  -------------------------------------------------- */
   const statCards = [
+    {
+      title: "Total Earnings",
+      value: `$${stats.totalEarnings}`,
+      icon: DollarSign,
+      gradient: "from-amber-400 to-yellow-500",
+      link: "/dashboard/guide",
+      description: "Money you've earned hosting experiences.",
+    },
     {
       title: "Active Tours",
       value: stats.activeListings,
       icon: MapPin,
-      color: "bg-gradient-to-br from-emerald-500 to-green-600",
-      textColor: "text-emerald-600",
+      gradient: "from-emerald-400 to-green-500",
       link: "/dashboard/guide/my-listings",
-      description: "Live experiences",
+      description: "Adventures travellers can book right now.",
     },
     {
       title: "Upcoming Bookings",
       value: stats.pendingBookings,
       icon: Calendar,
-      color: "bg-gradient-to-br from-blue-500 to-blue-600",
-      textColor: "text-blue-600",
+      gradient: "from-sky-400 to-blue-500",
       link: "/dashboard/guide/upcoming-bookings",
-      description: "Needs confirmation",
-    },
-    {
-      title: "Total Earnings",
-      value: `$${stats.totalEarnings}`,
-      icon: DollarSign,
-      color: "bg-gradient-to-br from-amber-500 to-yellow-600",
-      textColor: "text-amber-600",
-      link: "/dashboard/guide",
-      description: "Platform earnings",
+      description: "Reservations waiting for your confirmation.",
     },
     {
       title: "Avg. Rating",
       value: stats.averageRating.toFixed(1),
       icon: Star,
-      color: "bg-gradient-to-br from-purple-500 to-purple-600",
-      textColor: "text-purple-600",
+      gradient: "from-violet-400 to-purple-500",
       link: "/dashboard/guide",
-      description: `${stats.totalReviews} reviews`,
+      description: `${stats.totalReviews} reviews make up your score.`,
     },
   ];
 
+  /* ---------- helpers (unchanged) ---------- */
+
   return (
     <div className="min-h-screen bg-gradient-to-b from-emerald-50/50 to-white p-4 sm:p-6 lg:p-8">
-      {/* Welcome Header */}
+      {/* ------- welcome header (unchanged) ------- */}
       <div className="mb-10">
         <div className="mx-auto">
           <div className="flex flex-col md:flex-row md:items-center justify-between gap-6">
@@ -112,41 +113,49 @@ export default function GuideDashboardClient({
         </div>
       </div>
 
-      {/* Stats Grid */}
+      {/* ------- re-ordered stat cards ------- */}
       <div className="mx-auto">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-10">
-          {statCards.map((stat) => (
-            <Link
-              href={stat.link}
-              key={stat.title}
-              className="group relative overflow-hidden rounded-2xl p-6 transition-all duration-300 bg-white border border-gray-100 hover:border-gray-200 hover:shadow-lg hover:-translate-y-1"
-            >
-              <div className="flex items-center justify-between">
-                <div>
-                  <p className="text-sm font-medium text-gray-500 mb-2">
-                    {stat.title}
-                  </p>
-                  <p className="text-2xl font-bold text-gray-900">
-                    {stat.value}
-                  </p>
-                  <p className="text-xs text-gray-400 mt-2">
-                    {stat.description}
-                  </p>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 mb-10">
+          {statCards.map((s) => {
+            const Icon = s.icon;
+            return (
+              <Link
+                key={s.title}
+                href={s.link}
+                className="group relative block p-6 rounded-2xl bg-white/70 backdrop-blur-lg border border-white/30 shadow-md hover:shadow-lg hover:-translate-y-1 transition-all duration-300"
+              >
+                {/* soft glow on hover */}
+                <span
+                  className={`absolute inset-0 rounded-2xl bg-gradient-to-br ${s.gradient} opacity-0 group-hover:opacity-10 transition-opacity duration-300`}
+                />
+                <div className="relative flex items-center justify-between">
+                  <div>
+                    <p className="text-sm font-semibold text-gray-500">
+                      {s.title}
+                    </p>
+                    <p className="text-3xl font-bold mt-1 text-gray-900">
+                      {s.value}
+                    </p>
+                    <p className="text-xs text-gray-500 mt-2">
+                      {s.description}
+                    </p>
+                  </div>
+                  <div
+                    className={`shrink-0 w-14 h-14 grid place-items-center rounded-xl bg-gradient-to-br ${s.gradient} shadow-md group-hover:scale-110 transition-transform duration-300`}
+                  >
+                    <Icon className="w-6 h-6 text-white" />
+                  </div>
                 </div>
-                <div
-                  className={`${stat.color} p-3 rounded-xl group-hover:scale-110 transition-transform`}
-                >
-                  <stat.icon className="w-6 h-6 text-white" />
-                </div>
-              </div>
-            </Link>
-          ))}
+              </Link>
+            );
+          })}
         </div>
 
+        {/* ------- rest of dashboard unchanged ------- */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-          {/* Left Column - Main Content */}
+          {/* left column */}
           <div className="lg:col-span-2 space-y-8">
-            {/* Upcoming Bookings */}
+            {/* upcoming bookings */}
             <div className="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden">
               <div className="p-6 border-b border-gray-100">
                 <div className="flex items-center justify-between">
@@ -248,7 +257,7 @@ export default function GuideDashboardClient({
               </div>
             </div>
 
-            {/* Recent Reviews */}
+            {/* recent reviews */}
             <div className="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden">
               <div className="p-6 border-b border-gray-100">
                 <div className="flex items-center justify-between">
@@ -336,9 +345,9 @@ export default function GuideDashboardClient({
             </div>
           </div>
 
-          {/* Right Column */}
+          {/* right column – stats, level, help (unchanged beyond minor style) */}
           <div className="space-y-8">
-            {/* Guide Statistics */}
+            {/* stats */}
             <div className="bg-white rounded-2xl shadow-sm border border-gray-100 p-6">
               <h3 className="text-lg font-bold text-gray-900 mb-6">
                 Your Statistics
@@ -405,7 +414,7 @@ export default function GuideDashboardClient({
               </div>
             </div>
 
-            {/* Guide Level */}
+            {/* guide level */}
             <div className="bg-gradient-to-br from-emerald-50 to-green-50 rounded-2xl border border-emerald-100 p-6">
               <div className="flex items-center space-x-4 mb-4">
                 <div className="w-12 h-12 bg-gradient-to-br from-emerald-500 to-green-600 rounded-xl flex items-center justify-center">
@@ -434,7 +443,7 @@ export default function GuideDashboardClient({
               </p>
             </div>
 
-            {/* Support CTA */}
+            {/* help cta */}
             <div className="bg-gradient-to-br from-blue-50 to-cyan-50 rounded-2xl border border-blue-100 p-6">
               <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-cyan-600 rounded-full flex items-center justify-center mb-4">
                 <MessageCircle className="w-6 h-6 text-white" />
