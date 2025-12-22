@@ -97,6 +97,4 @@ export const userService = {
       throw new Error(error.message || "Failed to delete user");
     }
   },
-
-  // Remove revalidateCache since we don't need it
 };

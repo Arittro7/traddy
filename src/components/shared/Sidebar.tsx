@@ -13,6 +13,8 @@ import {
   Calendar,
   Menu,
   X,
+  Briefcase,
+  Shield,
 
 } from "lucide-react";
 import { useState, useEffect } from "react";
@@ -38,6 +40,11 @@ export default function Sidebar() {
   // Tourist navigation
   const touristNav = [
     {
+      href: "/dashboard/tourist",
+      icon: <Calendar className="w-5 h-5" />,
+      label: "Dashboard",
+    },
+    {
       href: "/dashboard/tourist/wishlist",
       icon: <Home className="w-5 h-5" />,
       label: "Wishlist",
@@ -47,10 +54,16 @@ export default function Sidebar() {
       icon: <Compass className="w-5 h-5" />,
       label: "My Trips",
     },
+    
   ];
 
   // Guide navigation
   const guideNav = [
+     {
+      href: "/dashboard/guide",
+      icon: <Briefcase className="w-5 h-5" />,
+      label: "Dashboard",
+    },
     {
       href: "/dashboard/guide/my-listings",
       icon: <Home className="w-5 h-5" />,
@@ -71,6 +84,11 @@ export default function Sidebar() {
   // Admin navigation
   const adminNav = [
     {
+      href: "/dashboard/admin",
+      icon: <Shield className="w-5 h-5" />,
+      label: "Overview",
+    },
+    {
       href: "/dashboard/admin/users",
       icon: <User className="w-5 h-5" />,
       label: "Users",
@@ -85,6 +103,7 @@ export default function Sidebar() {
       icon: <BookCheck className="w-5 h-5" />,
       label: "Bookings",
     },
+    
   ];
 
   // Get navigation based on user role
@@ -105,6 +124,10 @@ export default function Sidebar() {
 
   // Check if link is active
   const isActive = (href: string) => {
+    if (href === "/dashboard/admin") {
+    return pathname === href; // exact match only
+  }
+
     return pathname === href || pathname.startsWith(href + "/");
   };
 
@@ -149,7 +172,7 @@ export default function Sidebar() {
               onClick={() => setIsMobileOpen(false)}
               className={`flex items-center space-x-3 p-3 rounded-lg transition-colors ${
                 active
-                  ? "bg-[#F08787]  border-l-4 border-[#e73a3a]"
+                  ? "bg-[#001F3D] border-l-4 border-[#e73a3a]"
                   : "text-gray-700 hover:bg-blue-50 hover:text-blue-600"
               }`}
             >

@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 // app/dashboard/admin/users/UserManagementWrapper.tsx
 "use client";
 

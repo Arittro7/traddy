@@ -119,7 +119,7 @@ export default function LoginForm({ redirectTo }: LoginFormProps) {
             name="password"
             label="Password"
             placeholder="Enter your password"
-            className="pl-12 pr-12 text-blacZ"
+            className="pl-12 pr-12 text-black"
             required
             disabled={formLoading}
           />

@@ -414,7 +414,7 @@ export function EditUserDialog({ userId, onSuccess }: EditUserDialogProps) {
                   id="email"
                   type="email"
                   disabled
-                  className="bg-gray-100 cursor-not-allowed"
+                  className=" cursor-not-allowed"
                   placeholder="john@example.com"
                   value={formData.email}
                   onChange={(e) => handleInputChange("email", e.target.value)}
