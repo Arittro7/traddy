@@ -124,12 +124,16 @@ export default function Sidebar() {
 
   // Check if link is active
   const isActive = (href: string) => {
-    if (href === "/dashboard/admin") {
-    return pathname === href; // exact match only
+  // dashboard roots must match exactly
+  if (
+    href === "/dashboard/tourist" ||
+    href === "/dashboard/guide" ||
+    href === "/dashboard/admin"
+  ) {
+    return pathname === href;
   }
-
-    return pathname === href || pathname.startsWith(href + "/");
-  };
+  return pathname === href || pathname.startsWith(href + "/");
+};
 
   const navItems = getNavItems();
 

@@ -5,20 +5,16 @@ import Link from "next/link";
 import {
   Calendar,
   MapPin,
-  Star,
-  Clock,
-  Heart,
-  Users,
-  CheckCircle,
-  AlertCircle,
-  TrendingUp,
-  Compass,
   Globe,
-  Award,
-  History,
+  CheckCircle,
+  Compass,
+  Heart,
   PlusCircle,
-  Search,
   ThumbsUp,
+  Search,
+  History,
+  Award,
+  TrendingUp,
 } from "lucide-react";
 
 interface TouristDashboardClientProps {
@@ -31,7 +27,7 @@ interface TouristDashboardClientProps {
 export default function TouristDashboardClient({
   dashboardData = {},
 }: TouristDashboardClientProps) {
-  // Safe data extraction with defaults
+  // Safe data extraction
   const upcomingBookings = dashboardData?.upcomingBookings || [];
   const pastExperiences = dashboardData?.pastExperiences || [];
 
@@ -41,157 +37,214 @@ export default function TouristDashboardClient({
     pastExperiences.map((e) => e?.listing?.city).filter(Boolean)
   ).size;
 
-  const stats = [
-    {
-      title: "Upcoming Trips",
-      value: upcomingCount,
-      icon: Calendar,
-      color: "bg-gradient-to-br from-blue-500 to-blue-600",
-      textColor: "text-blue-600",
-      link: "/dashboard/tourist/my-trips",
-    },
-    {
-      title: "Cities Visited",
-      value: visitedCities,
-      icon: Globe,
-      color: "bg-gradient-to-br from-emerald-500 to-green-600",
-      textColor: "text-emerald-600",
-      link: "/dashboard/tourist/my-trips",
-    },
-    {
-      title: "Past Experiences",
-      value: pastCount,
-      icon: CheckCircle,
-      color: "bg-gradient-to-br from-purple-500 to-purple-600",
-      textColor: "text-purple-600",
-      link: "/dashboard/tourist/my-trips?status=completed",
-    },
-    {
-      title: "Ready to Explore",
-      value: "New",
-      icon: Compass,
-      color: "bg-gradient-to-br from-amber-500 to-orange-600",
-      textColor: "text-amber-600",
-      link: "/explore",
-      isCTA: true,
-    },
-  ];
-
   const quickActions = [
-    {
-      title: "Find Food Tours",
-      icon: Heart,
-      color: "bg-gradient-to-br from-rose-500 to-pink-600",
-      link: "/explore?category=food",
-    },
-    {
-      title: "Book New Experience",
-      icon: PlusCircle,
-      color: "bg-gradient-to-br from-blue-500 to-cyan-600",
-      link: "/explore",
-    },
-    {
-      title: "Write a Review",
-      icon: ThumbsUp,
-      color: "bg-gradient-to-br from-amber-500 to-yellow-600",
-      link: "/my-reviews",
-    },
-    {
-      title: "Search Guides",
-      icon: Search,
-      color: "bg-gradient-to-br from-indigo-500 to-purple-600",
-      link: "/guides",
-    },
+    { title: "Book New Tour", icon: PlusCircle, link: "/explore", gradient: "from-indigo-500 to-blue-600" },
+    { title: "Food Experiences", icon: Heart, link: "/explore?category=food", gradient: "from-rose-500 to-pink-600" },
+    { title: "Find Local Guides", icon: Search, link: "/guides", gradient: "from-purple-500 to-indigo-600" },
+    { title: "Leave a Review", icon: ThumbsUp, link: "/my-reviews", gradient: "from-amber-500 to-orange-600" },
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-blue-50/50 to-white p-4 sm:p-6 lg:p-8">
-      {/* Welcome Header */}
-      <div className="mb-10">
-        <div className="mx-auto">
-          <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-3">
-            Welcome back! 👋
-          </h1>
-          <p className="text-lg text-gray-600 mb-8 max-w-2xl">
-            Ready for your next adventure? Here's what's happening with your
-            travels.
-          </p>
+    <div className="min-h-screen bg-gray-50/80">
+      {/* Hero Header */}
+      <div className="bg-gradient-to-r from-teal-600 via-blue-600 to-indigo-700 text-white">
+        <div className="max-w-7xl mx-auto px-6 py-16 sm:py-20 lg:px-8">
+          <div className="flex items-center gap-6">
+            <div className="p-4 bg-white/20 backdrop-blur-sm rounded-2xl">
+              <Compass className="w-12 h-12" />
+            </div>
+            <div>
+              <h1 className="text-4xl sm:text-5xl font-bold mb-4">
+                Welcome back, Explorer!
+              </h1>
+              <p className="text-xl opacity-90 max-w-2xl">
+                Your travel journey continues — see what's next and discover new adventures.
+              </p>
+            </div>
+          </div>
         </div>
       </div>
 
-      <div className="mx-auto">
-        {/* Stats Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-10">
-          {stats.map((stat) => (
-            <Link
-              href={stat.link}
-              key={stat.title}
-              className={`group relative overflow-hidden rounded-2xl p-6 transition-all duration-300 ${
-                stat.isCTA
-                  ? "bg-gradient-to-br from-blue-50 to-blue-100 border-2 border-blue-200 hover:border-blue-300"
-                  : "bg-white border border-gray-100 hover:border-gray-200"
-              } hover:shadow-lg hover:-translate-y-1`}
-            >
-              <div className="flex items-center justify-between">
-                <div>
-                  <p className="text-sm font-medium text-gray-500 mb-2">
-                    {stat.title}
-                  </p>
-                  <p
-                    className={`text-2xl font-bold ${
-                      stat.isCTA ? "text-blue-700" : "text-gray-900"
-                    }`}
-                  >
-                    {stat.value}
-                  </p>
-                </div>
-                <div
-                  className={`${stat.color} p-3 rounded-xl group-hover:scale-110 transition-transform`}
-                >
-                  <stat.icon className="w-6 h-6 text-white" />
-                </div>
+      <div className="mx-auto px-6 py-12 lg:px-8">
+        {/* Quick Stats Bar */}
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-5 mb-12">
+          <Link
+            href="/dashboard/tourist/my-trips"
+            className="bg-white rounded-xl shadow-md p-6 hover:shadow-lg transition-shadow"
+          >
+            <div className="flex items-center justify-between">
+              <div>
+                <p className="text-sm text-gray-600">Upcoming Trips</p>
+                <p className="text-3xl font-bold text-gray-900 mt-1">{upcomingCount}</p>
               </div>
-              {stat.isCTA && (
-                <div className="mt-4 pt-4 border-t border-blue-200">
-                  <span className="text-sm font-medium text-blue-700">
-                    Browse tours →
-                  </span>
-                </div>
-              )}
-            </Link>
-          ))}
+              <Calendar className="w-10 h-10 text-blue-600 opacity-80" />
+            </div>
+          </Link>
+
+          <Link
+            href="/dashboard/tourist/my-trips"
+            className="bg-white rounded-xl shadow-md p-6 hover:shadow-lg transition-shadow"
+          >
+            <div className="flex items-center justify-between">
+              <div>
+                <p className="text-sm text-gray-600">Cities Explored</p>
+                <p className="text-3xl font-bold text-gray-900 mt-1">{visitedCities}</p>
+              </div>
+              <Globe className="w-10 h-10 text-emerald-600 opacity-80" />
+            </div>
+          </Link>
+
+          <Link
+            href="/dashboard/tourist/my-trips?status=completed"
+            className="bg-white rounded-xl shadow-md p-6 hover:shadow-lg transition-shadow"
+          >
+            <div className="flex items-center justify-between">
+              <div>
+                <p className="text-sm text-gray-600">Past Experiences</p>
+                <p className="text-3xl font-bold text-gray-900 mt-1">{pastCount}</p>
+              </div>
+              <CheckCircle className="w-10 h-10 text-purple-600 opacity-80" />
+            </div>
+          </Link>
+
+          <Link
+            href="/explore"
+            className="bg-gradient-to-r from-indigo-600 to-purple-600 rounded-xl shadow-md p-6 hover:shadow-lg transition-shadow text-white"
+          >
+            <div className="flex items-center justify-between">
+              <div>
+                <p className="text-sm opacity-90">Ready for More?</p>
+                <p className="text-2xl font-bold mt-1">Explore Now</p>
+              </div>
+              <Compass className="w-10 h-10 opacity-90" />
+            </div>
+          </Link>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-          {/* Left Column - Main Content */}
-          <div className="lg:col-span-2 space-y-8">
-            {/* Upcoming Trips */}
-            <div className="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden">
-              <div className="p-6 border-b border-gray-100">
-                <div className="flex items-center justify-between">
-                  <div className="flex items-center space-x-3">
-                    <div className="w-10 h-10 bg-gradient-to-br from-blue-500 to-blue-600 rounded-lg flex items-center justify-center">
-                      <Calendar className="w-5 h-5 text-white" />
-                    </div>
-                    <div>
-                      <h2 className="text-xl font-bold text-gray-900">
-                        Upcoming Trips
-                      </h2>
-                      <p className="text-sm text-gray-500">
-                        {upcomingCount} {upcomingCount === 1 ? "trip" : "trips"}{" "}
-                        scheduled
-                      </p>
-                    </div>
-                  </div>
-                  {upcomingCount > 0 && (
+        {/* Main Layout - Reordered: Quick Actions first on the side, then content */}
+        <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
+          {/* Sidebar - Quick Actions & Tip */}
+          <div className="lg:col-span-1 space-y-6">
+            {/* Quick Actions */}
+            <div className="bg-white rounded-2xl shadow-sm border border-gray-200 p-6">
+              <h3 className="font-semibold text-lg text-gray-900 mb-5">Quick Actions</h3>
+              <div className="space-y-3">
+                {quickActions.map((action) => {
+                  const Icon = action.icon;
+                  return (
                     <Link
-                      href="/my-bookings"
-                      className="text-sm font-medium text-blue-600 hover:text-blue-800"
+                      key={action.title}
+                      href={action.link}
+                      className="flex items-center gap-4 p-4 rounded-xl hover:bg-gray-50 transition-colors group"
                     >
-                      View all
+                      <div className={`p-3 rounded-lg bg-gradient-to-br ${action.gradient}`}>
+                        <Icon className="w-6 h-6 text-white" />
+                      </div>
+                      <span className="font-medium text-gray-800 group-hover:text-gray-900">
+                        {action.title}
+                      </span>
                     </Link>
-                  )}
+                  );
+                })}
+              </div>
+            </div>
+
+            {/* Travel Tip Card */}
+            <div className="bg-gradient-to-br from-teal-50 to-emerald-50 rounded-2xl border border-teal-200 p-6">
+              <div className="flex gap-4">
+                <div className="p-3 bg-teal-600 rounded-xl">
+                  <Award className="w-6 h-6 text-white" />
                 </div>
+                <div>
+                  <h4 className="font-semibold text-gray-900 mb-2">Travel Tip</h4>
+                  <p className="text-sm text-gray-700">
+                    Book at least 3 days in advance for the best availability and exclusive group discounts.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* Final CTA */}
+            <Link href="/explore" className="block">
+              <div className="bg-gradient-to-r from-blue-600 to-indigo-600 text-white rounded-2xl p-6 text-center hover:from-blue-700 hover:to-indigo-700 transition-all">
+                <TrendingUp className="w-10 h-10 mx-auto mb-3 opacity-90" />
+                <p className="font-semibold text-lg">Browse All Tours</p>
+                <p className="text-sm opacity-90 mt-1">Discover local hidden gems</p>
+              </div>
+            </Link>
+          </div>
+
+          {/* Main Content Area */}
+          <div className="lg:col-span-3 space-y-8">
+            {/* Past Experiences First (shuffled order) */}
+            <div className="bg-white rounded-2xl shadow-sm border border-gray-200 overflow-hidden">
+              <div className="px-6 py-5 border-b border-gray-200 flex items-center justify-between">
+                <div className="flex items-center gap-3">
+                  <History className="w-8 h-8 text-gray-600" />
+                  <div>
+                    <h2 className="text-xl font-semibold text-gray-900">Your Travel History</h2>
+                    <p className="text-sm text-gray-500">{pastCount} completed experiences</p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="p-6">
+                {pastExperiences.length > 0 ? (
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    {pastExperiences.slice(0, 4).map((exp) => (
+                      <div
+                        key={exp?._id || Math.random()}
+                        className="flex items-center gap-4 p-4 rounded-lg hover:bg-gray-50 transition-colors"
+                      >
+                        <div className="w-12 h-12 bg-gray-200 rounded-lg flex items-center justify-center">
+                          <MapPin className="w-6 h-6 text-gray-600" />
+                        </div>
+                        <div className="flex-1">
+                          <p className="font-medium text-gray-900 line-clamp-1">
+                            {exp?.listing?.title || "Unknown Experience"}
+                          </p>
+                          <p className="text-sm text-gray-600 flex items-center mt-1">
+                            <MapPin className="w-4 h-4 mr-1" />
+                            {exp?.listing?.city || "Unknown City"}
+                          </p>
+                        </div>
+                        <span className="text-sm text-gray-500">
+                          {exp?.date
+                            ? new Date(exp.date).toLocaleDateString("en-US", {
+                                month: "short",
+                                day: "numeric",
+                              })
+                            : "--"}
+                        </span>
+                      </div>
+                    ))}
+                  </div>
+                ) : (
+                  <div className="text-center py-12">
+                    <History className="w-16 h-16 text-gray-300 mx-auto mb-4" />
+                    <p className="text-gray-500">No past experiences yet — time to start traveling!</p>
+                  </div>
+                )}
+              </div>
+            </div>
+
+            {/* Upcoming Trips */}
+            <div className="bg-white rounded-2xl shadow-sm border border-gray-200 overflow-hidden">
+              <div className="px-6 py-5 border-b border-gray-200 flex items-center justify-between">
+                <div className="flex items-center gap-3">
+                  <Calendar className="w-8 h-8 text-blue-600" />
+                  <div>
+                    <h2 className="text-xl font-semibold text-gray-900">Upcoming Adventures</h2>
+                    <p className="text-sm text-gray-500">
+                      {upcomingCount} {upcomingCount === 1 ? "trip" : "trips"} scheduled
+                    </p>
+                  </div>
+                </div>
+                {upcomingCount > 0 && (
+                  <Link href="/my-bookings" className="text-blue-600 hover:text-blue-800 font-medium">
+                    View all →
+                  </Link>
+                )}
               </div>
 
               <div className="p-6">
@@ -200,230 +253,93 @@ export default function TouristDashboardClient({
                     {upcomingBookings.slice(0, 3).map((booking) => (
                       <div
                         key={booking?._id || Math.random()}
-                        className="group flex items-center p-4 rounded-xl bg-gradient-to-r from-blue-50/50 to-blue-50/30 hover:from-blue-100/50 hover:to-blue-100/30 transition-all duration-300 border border-blue-100 hover:border-blue-200"
+                        className="flex items-center gap-5 p-5 rounded-xl border border-gray-200 hover:border-blue-300 hover:bg-blue-50/30 transition-all"
                       >
-                        <div className="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-blue-400 to-blue-600 rounded-lg flex items-center justify-center mr-4">
-                          <MapPin className="w-6 h-6 text-white" />
+                        <div className="w-14 h-14 bg-blue-100 rounded-xl flex items-center justify-center flex-shrink-0">
+                          <MapPin className="w-7 h-7 text-blue-600" />
                         </div>
-                        <div className="flex-1 min-w-0">
-                          <h3 className="font-bold text-gray-900 truncate mb-1">
+                        <div className="flex-1">
+                          <h3 className="font-semibold text-gray-900">
                             {booking?.listing?.title || "Unknown Tour"}
                           </h3>
-                          <div className="flex items-center space-x-4 text-sm text-gray-600">
-                            <span className="flex items-center">
-                              <MapPin className="w-4 h-4 mr-1" />
+                          <div className="mt-2 flex flex-wrap gap-4 text-sm text-gray-600">
+                            <span className="flex items-center gap-1">
+                              <MapPin className="w-4 h-4" />
                               {booking?.listing?.city || "Unknown City"}
                             </span>
-                            <span className="flex items-center">
-                              <Users className="w-4 h-4 mr-1" />
-                              {booking?.groupSize || 0} people
-                            </span>
+                            <span>{booking?.groupSize || 0} travelers</span>
                             <span className="font-medium text-gray-900">
                               ${booking?.totalPrice || 0}
                             </span>
                           </div>
                         </div>
-                        <div className="flex flex-col items-end space-y-2">
+                        <div className="text-right">
                           <span
-                            className={`px-3 py-1 rounded-full text-xs font-medium ${
+                            className={`inline-block px-3 py-1 text-xs font-medium rounded-full ${
                               booking?.status === "CONFIRMED"
                                 ? "bg-green-100 text-green-800"
                                 : "bg-amber-100 text-amber-800"
                             }`}
                           >
-                            {booking?.status || "UNKNOWN"}
+                            {booking?.status || "PENDING"}
                           </span>
-                          <span className="text-sm text-gray-500">
+                          <p className="mt-2 text-sm text-gray-500">
                             {booking?.date
                               ? new Date(booking.date).toLocaleDateString()
                               : "No date"}
-                          </span>
+                          </p>
                         </div>
                       </div>
                     ))}
                   </div>
                 ) : (
-                  <div className="text-center py-12">
-                    <div className="w-20 h-20 bg-gradient-to-br from-blue-100 to-blue-200 rounded-full flex items-center justify-center mx-auto mb-6">
-                      <Calendar className="w-10 h-10 text-blue-600" />
+                  <div className="text-center py-16">
+                    <div className="w-24 h-24 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                      <Calendar className="w-12 h-12 text-blue-600" />
                     </div>
-                    <h3 className="text-lg font-semibold text-gray-900 mb-2">
-                      No upcoming trips
+                    <h3 className="text-xl font-semibold text-gray-900 mb-3">
+                      No trips planned yet
                     </h3>
-                    <p className="text-gray-600 mb-6 max-w-md mx-auto">
-                      You don't have any trips scheduled. Browse available tours
-                      and start your next adventure.
+                    <p className="text-gray-600 mb-8 max-w-md mx-auto">
+                      Your calendar is wide open — perfect time to book an unforgettable experience!
                     </p>
                     <Link
                       href="/explore"
-                      className="inline-flex items-center px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
+                      className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-blue-600 to-indigo-600 text-white font-medium rounded-lg hover:from-blue-700 hover:to-indigo-700 transition-colors"
                     >
-                      <Compass className="w-5 h-5 mr-2" />
-                      Explore Tours
+                      <Compass className="w-5 h-5" />
+                      Start Exploring
                     </Link>
                   </div>
                 )}
               </div>
             </div>
 
-            {/* Discover More */}
-            <div className="bg-gradient-to-br from-indigo-50 to-purple-50 rounded-2xl border border-indigo-100 p-8">
-              <div className="flex flex-col md:flex-row items-center justify-between gap-6">
-                <div className="flex-1">
-                  <h2 className="text-2xl font-bold text-gray-900 mb-3">
-                    Discover Hidden Gems
-                  </h2>
-                  <p className="text-gray-700 mb-6">
-                    Explore unique local experiences curated just for you. From
-                    food tours to cultural walks, find your next adventure.
-                  </p>
-                  <div className="flex flex-wrap gap-3">
-                    <span className="px-3 py-1.5 bg-white text-indigo-700 rounded-full text-sm font-medium border border-indigo-200">
-                      Food Tours
-                    </span>
-                    <span className="px-3 py-1.5 bg-white text-emerald-700 rounded-full text-sm font-medium border border-emerald-200">
-                      Cultural Walks
-                    </span>
-                    <span className="px-3 py-1.5 bg-white text-amber-700 rounded-full text-sm font-medium border border-amber-200">
-                      Photography
-                    </span>
-                    <span className="px-3 py-1.5 bg-white text-rose-700 rounded-full text-sm font-medium border border-rose-200">
-                      Adventure
-                    </span>
-                  </div>
-                </div>
-                <div className="flex-shrink-0">
-                  <Link href="/explore">
-                    <div className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 text-white rounded-lg">
-                      <Compass className="w-5 h-5 mr-2" />
-                      Start Exploring
-                    </div>
-                  </Link>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* Right Column */}
-          <div className="space-y-8">
-            {/* Quick Actions */}
-            <div className="bg-white rounded-2xl shadow-sm border border-gray-100 p-6">
-              <h3 className="text-lg font-bold text-gray-900 mb-6">
-                Quick Actions
-              </h3>
-              <div className="grid grid-cols-2 gap-3">
-                {quickActions.map((action) => (
-                  <Link
-                    key={action.title}
-                    href={action.link}
-                    className="group flex flex-col items-center justify-center p-4 rounded-xl border border-gray-100 hover:border-blue-200 hover:bg-blue-50/50 transition-all duration-300"
-                  >
-                    <div
-                      className={`${action.color} p-3 rounded-xl mb-3 group-hover:scale-110 transition-transform`}
+            {/* Discover Section (moved to bottom) */}
+            <div className="bg-gradient-to-r from-purple-600 to-indigo-700 rounded-2xl p-8 text-white">
+              <div className="max-w-3xl">
+                <h2 className="text-3xl font-bold mb-4">Discover Hidden Gems Around the World</h2>
+                <p className="text-lg opacity-90 mb-8">
+                  Join authentic local tours — food walks, cultural immersions, photography journeys, and more.
+                </p>
+                <div className="flex flex-wrap gap-3 mb-8">
+                  {["Food Tours", "Cultural Walks", "Photography", "Adventure"].map((tag) => (
+                    <span
+                      key={tag}
+                      className="px-4 py-2 bg-white/20 backdrop-blur-sm rounded-full text-sm font-medium"
                     >
-                      <action.icon className="w-6 h-6 text-white" />
-                    </div>
-                    <span className="text-sm font-medium text-gray-700 text-center group-hover:text-blue-700">
-                      {action.title}
+                      {tag}
                     </span>
-                  </Link>
-                ))}
-              </div>
-            </div>
-
-            {/* Past Experiences */}
-            <div className="bg-white rounded-2xl shadow-sm border border-gray-100 p-6">
-              <div className="flex items-center justify-between mb-6">
-                <div className="flex items-center space-x-3">
-                  <div className="w-10 h-10 bg-gradient-to-br from-gray-500 to-gray-600 rounded-lg flex items-center justify-center">
-                    <History className="w-5 h-5 text-white" />
-                  </div>
-                  <div>
-                    <h3 className="font-bold text-gray-900">
-                      Past Experiences
-                    </h3>
-                    <p className="text-sm text-gray-500">
-                      {pastCount} completed
-                    </p>
-                  </div>
-                </div>
-              </div>
-
-              {pastExperiences.length > 0 ? (
-                <div className="space-y-3">
-                  {pastExperiences.slice(0, 4).map((exp) => (
-                    <div
-                      key={exp?._id || Math.random()}
-                      className="flex items-center justify-between p-3 rounded-lg bg-gray-50 hover:bg-gray-100 transition-colors"
-                    >
-                      <div className="min-w-0">
-                        <p className="font-medium text-gray-900 truncate text-sm">
-                          {exp?.listing?.title || "Unknown Experience"}
-                        </p>
-                        <div className="flex items-center text-xs text-gray-500 mt-1">
-                          <MapPin className="w-3 h-3 mr-1" />
-                          <span>{exp?.listing?.city || "Unknown City"}</span>
-                        </div>
-                      </div>
-                      <span className="text-xs text-gray-400 flex-shrink-0 ml-2">
-                        {exp?.date
-                          ? new Date(exp.date).toLocaleDateString("en-US", {
-                              month: "short",
-                              day: "numeric",
-                            })
-                          : "No date"}
-                      </span>
-                    </div>
                   ))}
                 </div>
-              ) : (
-                <div className="text-center py-8">
-                  <History className="w-12 h-12 text-gray-300 mx-auto mb-4" />
-                  <p className="text-gray-500 text-sm">
-                    No past experiences yet
-                  </p>
-                </div>
-              )}
-            </div>
-
-            {/* Travel Tip */}
-            <div className="bg-gradient-to-br from-emerald-50 to-green-50 rounded-2xl border border-emerald-100 p-6">
-              <div className="flex items-start space-x-4">
-                <div className="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-emerald-500 to-green-600 rounded-xl flex items-center justify-center">
-                  <Award className="w-6 h-6 text-white" />
-                </div>
-                <div>
-                  <h4 className="font-bold text-gray-900 mb-2">
-                    Pro Travel Tip
-                  </h4>
-                  <p className="text-sm text-gray-700 mb-3">
-                    Book tours at least 3 days in advance for better
-                    availability and group rates.
-                  </p>
-                  <div className="text-xs text-gray-500 flex items-center">
-                    <Clock className="w-3 h-3 mr-1" />
-                    Updated daily
-                  </div>
-                </div>
+                <Link
+                  href="/explore"
+                  className="inline-flex items-center gap-3 px-6 py-4 bg-white text-indigo-700 font-semibold rounded-xl hover:bg-gray-100 transition-colors"
+                >
+                  <Compass className="w-6 h-6" />
+                  Find Your Next Adventure
+                </Link>
               </div>
-            </div>
-
-            {/* CTA */}
-            <div className="bg-gradient-to-br from-blue-50 to-cyan-50 rounded-2xl border border-blue-100 p-6 text-center">
-              <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-cyan-600 rounded-full flex items-center justify-center mx-auto mb-4">
-                <TrendingUp className="w-6 h-6 text-white" />
-              </div>
-              <h4 className="font-bold text-gray-900 mb-2">
-                Ready to explore?
-              </h4>
-              <p className="text-sm text-gray-600 mb-4">
-                Find your next adventure with local experts
-              </p>
-              <Link href="/explore">
-                <div className="w-full px-4 py-2 bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700 text-white rounded-lg">
-                  Browse All Tours
-                </div>
-              </Link>
             </div>
           </div>
         </div>
